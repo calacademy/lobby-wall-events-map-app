@@ -1,0 +1,15 @@
+exports[`EventList enzyme shallow matches snapshot 1`] = `
+<div
+  className="">
+  <div
+    id="event-list-container">
+    <div
+      className="event-list-header">
+      <span
+        className="whats-on-today">
+        Information unavailable
+      </span>
+    </div>
+  </div>
+</div>
+`;

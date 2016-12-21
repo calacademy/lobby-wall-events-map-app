@@ -1,0 +1,9 @@
+exports[`Modal enzyme shallow matches snapshot 1`] = `
+<ReactCSSTransitionGroup
+  transitionAppear={false}
+  transitionEnter={true}
+  transitionEnterTimeout={500}
+  transitionLeave={true}
+  transitionLeaveTimeout={500}
+  transitionName="foobar" />
+`;

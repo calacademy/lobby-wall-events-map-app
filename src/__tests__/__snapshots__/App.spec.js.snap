@@ -1,0 +1,39 @@
+exports[`App Enzyme shallow matches snapshot 1`] = `
+<div
+  id="app-container">
+  <div
+    id="app-pager-container">
+    <div
+      id="app-page-map">
+      <Map
+        appOnPage="map" />
+    </div>
+    <div
+      id="app-page-events">
+      <Header
+        appOnPage="map"
+        hide={true}
+        networkConnected={false} />
+      <EventList
+        appOnPage="map"
+        closingTime="17:00"
+        datacount={null}
+        dataset={null}
+        hide={true}
+        networkConnected={false} />
+      <div
+        className="no-data-init notranslate">
+        <p>
+          Loading data. Thank you for your patience.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="app-pager app-next"
+    onClick={[Function]} />
+  <div
+    className="hide app-pager app-prev"
+    onClick={[Function]} />
+</div>
+`;

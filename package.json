@@ -1,0 +1,41 @@
+{
+  "name": "lobby-wall-events-map-app",
+  "version": "1.0.0",
+  "description": "California Academy of Sciences lobby information wall event listing and map app",
+  "main": "",
+  "scripts": {
+    "dev": "NODE_ENV=development webpack -d --watch --progress",
+    "prod": "NODE_ENV=production webpack -p --progress",
+    "test": "jest --verbose"
+  },
+  "author": "Joshua Ause",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.14.0",
+    "babel-jest": "^16.0.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-es2016": "^6.11.3",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.24.0",
+    "dotenv": "^2.0.0",
+    "enzyme": "^2.4.1",
+    "enzyme-to-json": "^1.1.3",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.22.0",
+    "jest": "^16.0.1",
+    "node-sass": "^3.8.0",
+    "react-addons-css-transition-group": "^15.3.2",
+    "react-addons-test-utils": "^15.3.2",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
+  }
+}

@@ -1,0 +1,99 @@
+exports[`Translator enzyme mount matches snapshot 1`] = `
+<div>
+  <div
+    className="header-translate">
+    <div
+      className="google-translate">
+      <div
+        id="google_translate_element" />
+    </div>
+    <div
+      className="modal-container">
+      <button
+        className="notranslate modal-button"
+        onClick={[Function]}>
+        Select Language
+      </button>
+      <Modal
+        isOpen={false}
+        transitionName="modal-anim">
+        <div
+          className="modal-outer"
+          onClick={[Function]}>
+          <div
+            className="modal-inner"
+            onClick={[Function]}>
+            <div
+              className="modal-header">
+              <h2
+                className="notranslate">
+                Select your language
+              </h2>
+            </div>
+            <div
+              className="modal-body">
+              <h3
+                className="notranslate">
+                Quick list of most commonly selected languages
+              </h3>
+              <ul
+                className="list-lang-buttons">
+                <li>
+                  <button
+                    className="selected notranslate big-select-button"
+                    onClick={[Function]}>
+                    English
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="notranslate big-select-button"
+                    onClick={[Function]}>
+                    中文
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="notranslate big-select-button"
+                    onClick={[Function]}>
+                    Español
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="notranslate big-select-button"
+                    onClick={[Function]}>
+                    Pilipino
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="notranslate big-select-button"
+                    onClick={[Function]}>
+                    日本語
+                  </button>
+                </li>
+              </ul>
+              <h3
+                className="notranslate">
+                Full list of available languages
+              </h3>
+              <ul
+                className="list-lang-links" />
+            </div>
+          </div>
+        </div>
+      </Modal>
+    </div>
+  </div>
+  <div
+    id="footer-container">
+    <div
+      className="hide notranslate">
+      Translation provided by
+    </div>
+    <div
+      className="footer-claude" />
+  </div>
+</div>
+`;

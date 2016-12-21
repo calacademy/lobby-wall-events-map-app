@@ -1,0 +1,33 @@
+exports[`Greeting enzyme shallow matches snapshot 1`] = `
+<div
+  className="greeting">
+  <div
+    className="greeting-container">
+    <div
+      className="greeting-item notranslate"
+      data-active={true}>
+      We speak your language
+    </div>
+    <div
+      className="greeting-item notranslate"
+      data-active={false}>
+      我们可以说您的母语。
+    </div>
+    <div
+      className="greeting-item notranslate"
+      data-active={false}>
+      Nosotros hablamos su idioma.
+    </div>
+    <div
+      className="greeting-item notranslate"
+      data-active={false}>
+      Nakapagsasalita kami ng Wika mo
+    </div>
+    <div
+      className="greeting-item notranslate"
+      data-active={false}>
+      お客様の言語で提供いたします
+    </div>
+  </div>
+</div>
+`;
