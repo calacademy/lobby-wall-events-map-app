@@ -88,9 +88,6 @@ var EventList = React.createClass({
       info: null,
       showBackup: false,
       currentTime: null,
-      nextPage: false,
-      prevPage: false,
-      eventPage: 'first',
     };
   },
 
@@ -117,13 +114,12 @@ var EventList = React.createClass({
     var date = new Date()
     var day = date.getDate()
     var monthIndex = date.getMonth()
-    var year = date.getFullYear()
 
     var sfx = ["th","st","nd","rd"]
     var val = day%100;
     var daySfx = (sfx[(val-20)%10] || sfx[val] || sfx[0])
 
-    return (monthNames[monthIndex] + ' ' + day + daySfx + ', ' + year)
+    return (monthNames[monthIndex] + ' ' + day + daySfx)
 
   },
 
@@ -184,42 +180,6 @@ var EventList = React.createClass({
     }
   },
 
-  _multiPageCheck: function() {
-    var more = false
-    var limit = $('#event-list-container').width() * 2
-    $('article').each(function () {
-      var offset = $(this).offset();
-      if (offset.left > limit) {
-        more = true
-      }
-		})
-    if (this.state.eventPage === 'last') {
-      more = false
-    }
-    this.setState({
-      nextPage: more
-    })
-  },
-
-  _handleClickNext: function() {
-    var adj = 0 - $('#event-list-container').width()
-    $('.row-wrapper').css('margin-left',adj)
-    this.setState({
-      nextPage: false,
-      prevPage: true,
-      eventPage: 'last'
-    })
-  },
-
-  _handleClickPrev: function() {
-    $('.row-wrapper').css('margin-left','0')
-    this.setState({
-      nextPage: true,
-      prevPage: false,
-      eventPage: 'first'
-    })
-  },
-
   componentWillReceiveProps: function(nextProps) {
 
     this._parseEventsByTime(nextProps.dataset)
@@ -234,20 +194,18 @@ var EventList = React.createClass({
       })
     }
 
-    this._multiPageCheck()
-
   },
 
   componentDidMount: function() {
     // set currentTime every 5 minutes
     this._setCurrentTime()
-    setInterval(()=>this._setCurrentTime(), (60000 * 2))
+    setInterval(()=>this._setCurrentTime(), (60000 * 5))
   },
 
   render: function render() {
 
     var classViewExpand = ''
-    if (this.props.datacount <= 13) {
+    if (this.props.datacount <= 15) {
       classViewExpand = 'halfsize'
     } else {
       classViewExpand = 'fullsize'
@@ -265,7 +223,7 @@ var EventList = React.createClass({
         <div>
           <div id="event-list-container" className={this.state.showBackup ? 'hide' : ''}>
             <div className="event-list-header">
-              <span className="whats-on-today">{'What\u2019s on Today'}</span>
+              <span className="whats-on-today">{'Today'}</span>
               <span>{this._getNiceTodayDate()}</span>
             </div>
             <div className={classViewExpand + ' row-wrapper'}>
@@ -274,15 +232,13 @@ var EventList = React.createClass({
           </div>
           <div id="event-list-container-backup" className={this.state.showBackup ? 'notranslate' : 'hide notranslate'}>
             <div className="event-list-header">
-              <span className="whats-on-today">{'What\u2019s on Today'}</span>
+              <span className="whats-on-today">{'Today'}</span>
               <span>{this._getNiceTodayDate()}</span>
             </div>
             <div className={classViewExpand + ' row-wrapper'}>
               <div className="outer-container">{rows}</div>
             </div>
           </div>
-          <div className={((this.state.nextPage) && (this.props.appOnPage === 'events')) ? 'pager next' : 'hide pager next'} onClick={this._handleClickNext}></div>
-          <div className={((this.state.prevPage) && (this.props.appOnPage === 'events')) ? 'pager prev' : 'hide pager prev'} onClick={this._handleClickPrev}></div>
         </div>
       )
 

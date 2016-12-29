@@ -19,9 +19,7 @@ var App = React.createClass({
       eventData: null,
       eventCount: null,
       closingTime: '17:00', // default
-      nextPage: true,
-      prevPage: false,
-      appOnPage: 'map',
+      appOnPage: 'events',
     }
   },
 
@@ -112,26 +110,6 @@ var App = React.createClass({
     }
   },
 
-  _handleClickNext: function() {
-    var adj = 0 - $('#app-container').width()
-    $('#app-container').css('margin-left',adj)
-    this.setState({
-      nextPage: false,
-      prevPage: true,
-      appOnPage: 'events',
-    })
-  },
-
-  _handleClickPrev: function() {
-    var adj = $('#app-container').width()
-    $('#app-container').css('margin-left','0')
-    this.setState({
-      nextPage: true,
-      prevPage: false,
-      appOnPage: 'map',
-    })
-  },
-
   componentDidMount: function() {
     // establish network connection
     this._testNetworkConnection()
@@ -143,9 +121,6 @@ var App = React.createClass({
     return (
       <div id='app-container'>
         <div id='app-pager-container'>
-          <div id='app-page-map'>
-            <Map appOnPage={this.state.appOnPage} />
-          </div>
           <div id='app-page-events'>
             <Header hide={!this.state.eventDataInit} networkConnected={this.state.networkConnected} appOnPage={this.state.appOnPage} />
             <EventList hide={!this.state.eventDataInit} networkConnected={this.state.networkConnected} dataset={this.state.eventData} datacount={this.state.eventCount} closingTime={this.state.closingTime} appOnPage={this.state.appOnPage} />
@@ -153,9 +128,11 @@ var App = React.createClass({
               <p>Loading data. Thank you for your patience.</p>
             </div>
           </div>
+          <div id='app-page-map'>
+            <Map />
+          </div>
         </div>
-        <div className={this.state.nextPage ? 'app-pager app-next' : 'hide app-pager app-next'} onClick={this._handleClickNext}></div>
-        <div className={this.state.prevPage ? 'app-pager app-prev' : 'hide app-pager app-prev'} onClick={this._handleClickPrev}></div>
+
       </div>
     )
   }

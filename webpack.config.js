@@ -13,7 +13,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: 'js/[name].js?nocache=1',
+    filename: 'js/[name].js?nocache=0',
   },
   module: {
     loaders: [

@@ -15,12 +15,11 @@ var Header = React.createClass({
     return (
       <div className={this.props.hide ? 'hide' : ''}>
         <header className="header" role="contentinfo">
-          <div className="header-logo"></div>
-          <div className={!this.props.networkConnected ? 'hide' : ''}>
-            <Translator networkConnected={this.props.networkConnected} appOnPage={this.props.appOnPage} />
-          </div>
           <div className={!this.props.networkConnected ? 'hide' : ''}>
             <Greeting />
+          </div>
+          <div className={!this.props.networkConnected ? 'hide' : ''}>
+            <Translator networkConnected={this.props.networkConnected} appOnPage={this.props.appOnPage} />
           </div>
         </header>
       </div>
