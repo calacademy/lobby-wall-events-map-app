@@ -1,6 +1,11 @@
 exports[`Translator enzyme mount matches snapshot 1`] = `
 <div>
   <div
+    id="custom-loading-container">
+    <div
+      className="custom-animation" />
+  </div>
+  <div
     className="header-translate">
     <div
       className="google-translate">
@@ -94,6 +99,33 @@ exports[`Translator enzyme mount matches snapshot 1`] = `
     </div>
     <div
       className="footer-claude" />
+    <div
+      className="app-pager-controls">
+      <div
+        className="app-pager app-next"
+        onClick={[Function]}>
+        <div>
+          Visitor Map
+        </div>
+        <div
+          className="button-arrow" />
+      </div>
+      <div
+        className="app-pager app-prev"
+        onClick={[Function]}>
+        <div
+          className="button-arrow" />
+        <div>
+          Daily Programs
+        </div>
+      </div>
+    </div>
+    <div
+      className="hide pager next"
+      onClick={[Function]} />
+    <div
+      className="hide pager prev"
+      onClick={[Function]} />
   </div>
 </div>
 `;

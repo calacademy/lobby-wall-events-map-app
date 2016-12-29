@@ -4,18 +4,13 @@ exports[`App Enzyme shallow matches snapshot 1`] = `
   <div
     id="app-pager-container">
     <div
-      id="app-page-map">
-      <Map
-        appOnPage="map" />
-    </div>
-    <div
       id="app-page-events">
       <Header
-        appOnPage="map"
+        appOnPage="events"
         hide={true}
         networkConnected={false} />
       <EventList
-        appOnPage="map"
+        appOnPage="events"
         closingTime="17:00"
         datacount={null}
         dataset={null}
@@ -28,12 +23,10 @@ exports[`App Enzyme shallow matches snapshot 1`] = `
         </p>
       </div>
     </div>
+    <div
+      id="app-page-map">
+      <Map />
+    </div>
   </div>
-  <div
-    className="app-pager app-next"
-    onClick={[Function]} />
-  <div
-    className="hide app-pager app-prev"
-    onClick={[Function]} />
 </div>
 `;
