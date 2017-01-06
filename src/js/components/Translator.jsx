@@ -63,7 +63,7 @@ var Translator = React.createClass({
 
   _resetAppPageOneTimer: function() {
     clearTimeout(timerAppPageOne)
-    timerAppPageOne = setTimeout(()=>this._autoGoAppPageOne(), 60000)
+    timerAppPageOne = setTimeout(()=>this._autoGoAppPageOne(), 30000)
   },
 
   _resetDefaultLanguage: function() {
