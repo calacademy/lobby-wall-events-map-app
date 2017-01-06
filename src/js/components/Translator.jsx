@@ -63,7 +63,7 @@ var Translator = React.createClass({
 
   _resetAppPageOneTimer: function() {
     clearTimeout(timerAppPageOne)
-    timerAppPageOne = setTimeout(()=>this._autoGoAppPageOne(), 30000)
+    timerAppPageOne = setTimeout(()=>this._autoGoAppPageOne(), 60000)
   },
 
   _resetDefaultLanguage: function() {
@@ -214,10 +214,14 @@ var Translator = React.createClass({
   },
 
   _multiPageCheck: function() {
+    var moreThanZeroTest = false
     var more = false
     var limit = $('#event-list-container').width()
     $('article').each(function () {
       var position = $(this).position();
+      if (position.left > 0) {
+        moreThanZeroTest = true
+      }
       if (position.left > limit) {
         more = true
       }
@@ -228,6 +232,11 @@ var Translator = React.createClass({
     this.setState({
       nextPageEvent: more
     })
+    // if 2nd page blank (after trans to shorter lang) auto nav to 1st page
+    if (moreThanZeroTest === false) {
+      this._handleClickPrevEvent()
+    }
+
   },
 
   _handleClickNextEvent: function() {
@@ -313,7 +322,7 @@ var Translator = React.createClass({
           </div>
           <div className="modal-container">
 
-            <button onClick={this._openModal} className="notranslate modal-button">Select Language</button>
+            <button onClick={this._openModal} className={!this.props.networkConnected ? 'hide notranslate modal-button' : 'notranslate modal-button'}>Select Language</button>
 
             <Modal isOpen={this.state.isModalOpen}
               transitionName="modal-anim">
@@ -341,16 +350,24 @@ var Translator = React.createClass({
           </div>
         </div>
         <div id="footer-container">
-          <div className={(this.state.language !== 'en') ? 'footer-google notranslate' : 'hide notranslate'}>Translation provided by</div>
-          {/*<div className={this.state.language === 'en' ? 'footer-claude' : 'hide'}></div>*/}
+          <div className={!this.props.networkConnected ? 'hide notranslate' : 'footer-google notranslate'}>Translation provided by Google</div>
           <div className="footer-claude" />
 
-          <div className="app-pager-controls">
+          <div className={this.props.networkConnected ? 'hide notranslate' : 'app-pager-controls-backup notranslate'}>
             <div className="app-pager app-next" onClick={this._handleClickNext}>
               <div>Visitor Map</div><div className="button-arrow" />
             </div>
             <div className="app-pager app-prev" onClick={this._handleClickPrev}>
               <div className="button-arrow"></div><div>Daily Programs</div>
+            </div>
+          </div>
+
+          <div className={this.props.networkConnected ? 'app-pager-controls' : 'hide app-pager-controls'}>
+            <div className="app-pager app-next" onClick={this._handleClickNext}>
+              <div id="btn-visitor-map">Visitor Map</div><div className="button-arrow" />
+            </div>
+            <div className="app-pager app-prev" onClick={this._handleClickPrev}>
+              <div className="button-arrow"></div><div id="btn-daily-programs">Daily Programs</div>
             </div>
           </div>
 

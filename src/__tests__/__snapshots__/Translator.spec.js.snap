@@ -15,7 +15,7 @@ exports[`Translator enzyme mount matches snapshot 1`] = `
     <div
       className="modal-container">
       <button
-        className="notranslate modal-button"
+        className="hide notranslate modal-button"
         onClick={[Function]}>
         Select Language
       </button>
@@ -95,12 +95,12 @@ exports[`Translator enzyme mount matches snapshot 1`] = `
     id="footer-container">
     <div
       className="hide notranslate">
-      Translation provided by
+      Translation provided by Google
     </div>
     <div
       className="footer-claude" />
     <div
-      className="app-pager-controls">
+      className="app-pager-controls-backup notranslate">
       <div
         className="app-pager app-next"
         onClick={[Function]}>
@@ -116,6 +116,29 @@ exports[`Translator enzyme mount matches snapshot 1`] = `
         <div
           className="button-arrow" />
         <div>
+          Daily Programs
+        </div>
+      </div>
+    </div>
+    <div
+      className="hide app-pager-controls">
+      <div
+        className="app-pager app-next"
+        onClick={[Function]}>
+        <div
+          id="btn-visitor-map">
+          Visitor Map
+        </div>
+        <div
+          className="button-arrow" />
+      </div>
+      <div
+        className="app-pager app-prev"
+        onClick={[Function]}>
+        <div
+          className="button-arrow" />
+        <div
+          id="btn-daily-programs">
           Daily Programs
         </div>
       </div>

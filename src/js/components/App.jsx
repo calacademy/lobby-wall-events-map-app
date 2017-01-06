@@ -20,25 +20,43 @@ var App = React.createClass({
       eventCount: null,
       closingTime: '17:00', // default
       appOnPage: 'events',
+      disconnectionAlarm: false,
     }
   },
 
   _testNetworkConnection: function() {
     if (navigator.onLine) {
+      // extra network recovery handling to prevent lingering trans
+      if (this.state.disconnectionAlarm === true) {
+        $('#event-list-container').html(sessionStorage.backup)
+        $('#btn-daily-programs').html('Daily Programs')
+        $('#btn-visitor-map').html('Visitor Map')
+      }
+      this.setState({
+        disconnectionAlarm: false,
+      })
       // only set state as needed to avoid extraneous rendering
       if (this.state.networkConnected === false) {
         this.setState({
-          networkConnected: true
+          networkConnected: true,
         })
       }
       // if init data not pulled yet, try
       if (this.state.eventDataInit === false) {
         this._getEventData()
       }
+
     } else {
+      // clear google translate cookie - causes problems on network recovery
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:01 GMT;'
       if (this.state.networkConnected === true) {
         this.setState({
-          networkConnected: false
+          networkConnected: false,
+        })
+      }
+      if (this.state.disconnectionAlarm === false) {
+        this.setState({
+          disconnectionAlarm: true,
         })
       }
     }
@@ -73,6 +91,7 @@ var App = React.createClass({
         this.setState ({
           closingTime: closingTime,
         })
+        sessionStorage.backup = $('#event-list-container-backup').html()
       }.bind(this)
     })
   },
@@ -122,8 +141,8 @@ var App = React.createClass({
       <div id='app-container'>
         <div id='app-pager-container'>
           <div id='app-page-events'>
-            <Header hide={!this.state.eventDataInit} networkConnected={this.state.networkConnected} appOnPage={this.state.appOnPage} />
             <EventList hide={!this.state.eventDataInit} networkConnected={this.state.networkConnected} dataset={this.state.eventData} datacount={this.state.eventCount} closingTime={this.state.closingTime} appOnPage={this.state.appOnPage} />
+            <Header hide={!this.state.eventDataInit} networkConnected={this.state.networkConnected} appOnPage={this.state.appOnPage} />
             <div className={!this.state.eventDataInit ? 'no-data-init notranslate' : 'hide no-data-init notranslate'}>
               <p>Loading data. Thank you for your patience.</p>
             </div>

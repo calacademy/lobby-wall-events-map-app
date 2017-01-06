@@ -20,7 +20,7 @@ var Event = React.createClass({
 
   render: function render() {
 
-    if ((this.props.dataset.title === "Museum Opens") || (this.props.dataset.title === "Museum Closes")) {
+    if (this.props.dataset.title === "Museum Closes") {
 
       return (
         <article className={(this.props.time < this.props.currTime) ? 'event past' : 'event'}>
@@ -115,11 +115,9 @@ var EventList = React.createClass({
     var day = date.getDate()
     var monthIndex = date.getMonth()
 
-    var sfx = ["th","st","nd","rd"]
     var val = day%100;
-    var daySfx = (sfx[(val-20)%10] || sfx[val] || sfx[0])
 
-    return (monthNames[monthIndex] + ' ' + day + daySfx)
+    return (monthNames[monthIndex] + ' ' + day)
 
   },
 

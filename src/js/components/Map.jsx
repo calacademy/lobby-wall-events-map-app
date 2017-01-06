@@ -12,9 +12,6 @@ var Map = React.createClass({
 
     return (
       <div>
-        <div className="page-header">
-          <h1>Visitor Map</h1>
-        </div>
         <div id="map-container">
           <div className="map">
             <div className="map-page"></div>
