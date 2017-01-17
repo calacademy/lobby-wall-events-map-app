@@ -12,10 +12,15 @@ var Event = React.createClass({
     var strTimes = ''
     var hours24 = parseInt(str.substring(0, 2),10)
     var hours = ((hours24 + 11) % 12) + 1
-    var amPm = hours24 > 11 ? 'PM' : 'AM'
     var minutes = str.substring(2)
-    strTimes += hours + ':' + minutes + ' ' + amPm
+    strTimes += hours + ':' + minutes + ' '
     return strTimes
+  },
+
+  _getMeridiem: function(str) {
+    var hours24 = parseInt(str.substring(0, 2),10)
+    var amPm = hours24 > 11 ? 'PM' : 'AM'
+    return amPm
   },
 
   render: function render() {
@@ -24,7 +29,8 @@ var Event = React.createClass({
 
       return (
         <article className={(this.props.time < this.props.currTime) ? 'event past' : 'event'}>
-          <h2 className="notranslate">{this._convertMilitaryTime(this.props.time)}</h2>
+          <h2 className="notranslate">{this._convertMilitaryTime(this.props.time)}
+            <span className="meridiem">{this._getMeridiem(this.props.time)}</span></h2>
           <h1 className="open-close">{this.props.dataset.title}</h1>
         </article>
       )
@@ -37,7 +43,8 @@ var Event = React.createClass({
 
         return (
           <article className={(this.props.time < this.props.currTime) ? 'event past' : 'event'}>
-            <h2 className="notranslate">{this._convertMilitaryTime(this.props.time)}</h2>
+          <h2 className="notranslate">{this._convertMilitaryTime(this.props.time)}
+            <span className="meridiem">{this._getMeridiem(this.props.time)}</span></h2>
             <h1>{this.props.dataset.title}</h1>
             <span className="location">{this.props.dataset.location}</span>
             <div dangerouslySetInnerHTML={markup} />
@@ -221,8 +228,7 @@ var EventList = React.createClass({
         <div>
           <div id="event-list-container" className={this.state.showBackup ? 'hide' : ''}>
             <div className="event-list-header">
-              <span className="whats-on-today">{'Today'}</span>
-              <span>{this._getNiceTodayDate()}</span>
+              <span className="whats-on-today">{'Today'}</span><span>{this._getNiceTodayDate()}</span>
             </div>
             <div className={classViewExpand + ' row-wrapper'}>
               <div className="outer-container">{rows}</div>
@@ -230,8 +236,7 @@ var EventList = React.createClass({
           </div>
           <div id="event-list-container-backup" className={this.state.showBackup ? 'notranslate' : 'hide notranslate'}>
             <div className="event-list-header">
-              <span className="whats-on-today">{'Today'}</span>
-              <span>{this._getNiceTodayDate()}</span>
+              <span className="whats-on-today">{'Today'}</span><span>{this._getNiceTodayDate()}</span>
             </div>
             <div className={classViewExpand + ' row-wrapper'}>
               <div className="outer-container">{rows}</div>
