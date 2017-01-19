@@ -14,12 +14,12 @@ $font-size-no-data: 40px;
 $font-time: 20px;
 
 $font-size-modal-header: 34px;
-$font-size-modal-button: 26px;
+$font-size-modal-button: 28px;
 $font-size-modal-big-button: 36px;
 $font-size-modal-link: 18px;
 
 $font-size-today-header: 45px;
-$font-size-page-button: 26px;
+$font-size-page-button: 24px;
 
 $font-size-greeting: 67px;
 $header-padding: 45px 0 0 120px;
@@ -30,7 +30,6 @@ $font-google-footer: 13px;
 html {
   box-sizing: border-box;
   line-height: 1px;
-  //font-family: 'Academy A', 'Academy B', Helvetica, Arial, sans-serif;
   font-family: 'Whitney A', 'Whitney B', Helvetica, Arial, sans-serif;
   -webkit-user-select: none;  /* Chrome all / Safari all */
   user-select: none;          /* Likely future */
@@ -55,7 +54,7 @@ body {
 }
 
 button {
-  font-family: 'Academy A', 'Academy B', Helvetica, Arial, sans-serif;
+  font-family: 'Whitney A', 'Whitney B', Helvetica, Arial, sans-serif;
   text-decoration: none;
   border-width: 0;
   display: inline-block;
@@ -204,7 +203,7 @@ img {
           break-inside: avoid !important;
           width: 420px;
           h2 { //time
-            padding: 3px 0 8px 0;
+            padding: 0 0 8px 0;
             margin: 0;
             color: $orange;
             font-size: $font-time;
@@ -435,7 +434,7 @@ img {
       .modal-button {
         border: none;
         margin: 0;
-        padding: 2px 0 0 21px;
+        padding: 0 0 0 21px;
         background-color: $orange;
         width: 348px;
         height: 80px;
@@ -546,7 +545,7 @@ to {
     top: 95px;
     .app-pager {
       white-space: nowrap;
-      padding: 20px 40px 0 30px;
+      padding: 22px 40px 0 30px;
       height: 76px;
       border: 5px solid;
       border-color: $orange;
@@ -564,7 +563,7 @@ to {
         width: 18px;
         height: 25px;
         background-repeat: no-repeat;
-        background-position: 0 4px;
+        background-position: 0 2px;
       }
     }
     .app-pager:focus {
