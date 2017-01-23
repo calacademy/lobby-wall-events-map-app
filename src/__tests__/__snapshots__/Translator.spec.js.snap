@@ -47,35 +47,35 @@ exports[`Translator enzyme mount matches snapshot 1`] = `
                   <button
                     className="selected notranslate big-select-button"
                     onClick={[Function]}>
-                    English
+                    English 
                   </button>
                 </li>
                 <li>
                   <button
                     className="notranslate big-select-button"
                     onClick={[Function]}>
-                    中文
+                    中文 
                   </button>
                 </li>
                 <li>
                   <button
                     className="notranslate big-select-button"
                     onClick={[Function]}>
-                    Español
+                    Español 
                   </button>
                 </li>
                 <li>
                   <button
                     className="notranslate big-select-button"
                     onClick={[Function]}>
-                    Pilipino
+                    Pilipino 
                   </button>
                 </li>
                 <li>
                   <button
                     className="notranslate big-select-button"
                     onClick={[Function]}>
-                    日本語
+                    日本語 
                   </button>
                 </li>
               </ul>

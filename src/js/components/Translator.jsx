@@ -21,23 +21,23 @@ var Translator = React.createClass({
       biggies: [
         {
           value: 'en',
-          text: 'English'
+          text: 'English [FEATURED]'
         },
         {
           value: 'zh-CN',
-          text: '中文'
+          text: '中文 [FEATURED]'
         },
         {
           value: 'es',
-          text: 'Español'
+          text: 'Español [FEATURED]'
         },
         {
           value: 'tl',
-          text: 'Pilipino'
+          text: 'Pilipino [FEATURED]'
         },
         {
           value: 'ja',
-          text: '日本語'
+          text: '日本語 [FEATURED]'
         }
       ],
       languages: [],
@@ -283,12 +283,14 @@ var Translator = React.createClass({
       var rows = []
       this.state.biggies.forEach(function (data) {
         if (data.value !== '') {
+          var strNice = data.text
+          strNice = strNice.replace(/\[FEATURED\]/g, '')
           rows.push(
             <li key={data.value}>
             <button
             className={(data.value === this.state.language) ? 'selected notranslate big-select-button' : 'notranslate big-select-button'}
             onClick={_this._handleClick.bind(_this, data.value, data.text)}
-            >{data.text}</button>
+            >{strNice}</button>
             </li>
           )
         }
