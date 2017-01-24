@@ -49,7 +49,7 @@ body {
   overflow: hidden !important;
   color: $black;
   cursor: none !important;
-  cursor: pointer !important;
+  //cursor: pointer !important;
   background-repeat: no-repeat;
 }
 
@@ -60,7 +60,7 @@ button {
   display: inline-block;
   border: none;
   cursor: none !important;
-  cursor: pointer !important;
+  //cursor: pointer !important;
 }
 button:focus {
   outline: none;
@@ -80,7 +80,7 @@ section {
 
 a {
   cursor: none !important;
-  cursor: pointer !important;
+  //cursor: pointer !important;
 }
 
 a:active,
