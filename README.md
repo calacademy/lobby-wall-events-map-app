@@ -36,9 +36,9 @@ in place with test init script in package.json.
 yarn test
 ```
 
-# Development and Production Builds
+## Development and Production Builds
 
-Webpack build init scripts in package.json
+Webpack build init scripts in package.json.
 
 ```
 yarn run dev
