@@ -18,10 +18,12 @@ $ yarn
 ```
 
 Find .env file in team Google Drive:
+```
 +-- DME: Web & Interactive
 |   +-- Exhibit Interactives
 |   |   +-- Lobby Welcome Wall Events App
 |   |   |   +-- Technical
+```
 
 Copy .env into root of local lobby-wall-events-map project
 
