@@ -219,9 +219,9 @@ img {
           h1 { // title
             font-size: $font-large;
             margin: 0;
-            padding: 2px 9px 6px 0;
+            padding: 2px 9px 2px 0;
             font-weight: 500;
-            line-height: $font-large;
+            line-height: $font-large + 4;
             float: left;
           }
           .location {
@@ -229,7 +229,7 @@ img {
             font-weight: 400;
             line-height: $font-large;
             margin: 0 41px 0 0;
-            padding: 2px 0 6px 0;
+            padding: 4px 0 6px 0;
             break-inside: avoid !important;
             float: left;
           }
