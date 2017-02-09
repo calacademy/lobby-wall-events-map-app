@@ -7,11 +7,11 @@ $black: #231f20;
 $screen-width: 1200px;
 $screen-height: 1920px;
 $modal-font-large: 18px;
-$font-large: 18px;
-$font-medium: 15px;
+$font-large: 20px;
+$font-medium: 17px;
 $font-size-no-data: 40px;
 
-$font-time: 20px;
+$font-time: 23px;
 
 $font-size-modal-header: 34px;
 $font-size-modal-button: 28px;
@@ -236,7 +236,7 @@ img {
           p {
             margin: 0;
             padding: 0 0 6px 0;
-            font-size: $font-medium;
+            font-size: $font-medium - 1;
             color: $grey;
             font-weight: normal;
             line-height: $font-medium + 3;
