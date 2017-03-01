@@ -210,7 +210,7 @@ var EventList = React.createClass({
   render: function render() {
 
     var classViewExpand = ''
-    if (this.props.datacount <= 15) {
+    if (this.props.datacount <= 9) {
       classViewExpand = 'halfsize'
     } else {
       classViewExpand = 'fullsize'
