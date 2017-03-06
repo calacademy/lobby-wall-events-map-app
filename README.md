@@ -10,10 +10,12 @@ saved in local .env file in project root and excluded from git repo.
 
 ## Installation:
 
-Clone lobby-wall-events-map repo locally.
+Clone lobby-wall-events-map-app repo locally.
+
+Unpack node modules via Yarn:
 
 ```
-$ cd lobby-wall-events-map
+$ cd lobby-wall-events-map-app
 $ yarn
 ```
 
@@ -25,12 +27,13 @@ Find .env file in team Google Drive:
 |   |   |   +-- Technical
 ```
 
-Copy .env into root of local lobby-wall-events-map project
+Copy .env into root of local lobby-wall-events-map-app project
 
 ## Testing
 
 Unit and regression snapshot testing using Enzyme and Jest test utilities are
-in place with test init script in package.json.
+in place with test init script in package.json. (This app was not developed
+using test driven development, and the existing tests are fairly trivial.)
 
 ```
 yarn test
@@ -41,6 +44,6 @@ yarn test
 Webpack build init scripts in package.json.
 
 ```
-yarn run dev
-yarn run prod
+yarn dev
+yarn prod
 ```
