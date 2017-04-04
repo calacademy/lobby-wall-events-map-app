@@ -1,14 +1,7 @@
 # lobby-wall-events-map-app
 React web application for lobby wall map and event listing.
 
-## Build Notes:
-
-### .env variable for webpack module bundler build
-The URL for the events data feed is saved as global EVENTS_API_URL variable
-expected by webpack for dev and prod distribution builds. The variable is
-saved in local .env file in project root and excluded from git repo.
-
-## Installation:
+## Installation
 
 Clone lobby-wall-events-map-app repo locally.
 
@@ -39,11 +32,28 @@ using test driven development, and the existing tests are fairly trivial.)
 yarn test
 ```
 
+## Build Notes
+
+### .env variable for webpack module bundler build
+The URL for the events data feed is saved as global EVENTS_API_URL variable
+expected by webpack for dev and prod distribution builds. The variable is
+saved in local .env file in project root and excluded from git repo.
+
 ## Development and Production Builds
 
 Webpack build init scripts in package.json.
 
 ```
 yarn dev
-yarn prod
+yarn build
+```
+
+## Deploy Notes
+
+### .elasticbeanstalk/config.yml for eb cli deploy
+This directory/file should be placed in project root. Zipped file for this asset
+can be found in team technical documentation for project.
+
+```
+eb deploy
 ```
