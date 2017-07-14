@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "dev": "NODE_ENV=development webpack -d --watch --progress",
-    "build": "NODE_ENV=production webpack -p --progress && cd dist && zip ../dist.zip -r * .[^.]*",
+    "build": "NODE_ENV=production webpack -p --progress",
     "deploy": "aws s3 rm s3://lobby-wall-events-map.calacademy.org --recursive && aws s3 cp dist s3://lobby-wall-events-map.calacademy.org --recursive",
     "test": "jest --verbose"
   },
