@@ -50,10 +50,8 @@ yarn build
 
 ## Deploy Notes
 
-### .elasticbeanstalk/config.yml for eb cli deploy
-This directory/file should be placed in project root. Zipped file for this asset
-can be found in team technical documentation for project.
+The deploy script deletes s3://lobby-wall-events-map.calacademy.org content and copies local dist folder contents to s3://lobby-wall-events-map.calacademy.org.
 
 ```
-eb deploy
+yarn deploy
 ```
