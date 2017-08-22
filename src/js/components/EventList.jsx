@@ -47,9 +47,7 @@ var Event = React.createClass({
             <span className="meridiem">{this._getMeridiem(this.props.time)}</span></h2>
             <h1>{this.props.dataset.title}</h1>
             <span className="location">{this.props.dataset.location}</span>
-            <div>
-              <p dangerouslySetInnerHTML={markup} />
-            </div>
+            <p dangerouslySetInnerHTML={markup} />
           </article>
         )
 
