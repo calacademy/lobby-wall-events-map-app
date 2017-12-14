@@ -41,7 +41,12 @@ saved in local .env file in project root and excluded from git repo.
 
 ## Development and Production Builds
 
-Webpack build init scripts in package.json.
+Webpack build init scripts in package.json. Webpack config for 'dev' script
+automatically rebuilds to '/dist' on src edit. Run local webserver on /dist dir
+for dev work (no browser auto-refresh in place here). While 'dev' script is
+running, Webpack will use development variable in .env file (see above). Stop
+'dev' script and run 'build' script to build app to '/dist/ using production
+variable in .env file (prior to deployment).
 
 ```
 yarn dev
