@@ -12,6 +12,8 @@ var transTimeoutID
 var transIntervalID
 var timerAppPageOne
 
+var timerDoubleTrans
+
 var Translator = React.createClass({
 
   displayName: "Translator",
@@ -102,18 +104,29 @@ var Translator = React.createClass({
       })
       $('.google-translate select').val(lang)
       this._triggerHtmlEvent($('.google-translate select'), 'change')
+
       ga('send', 'event', {
         'eventCategory': 'Google Translate',
         'eventAction': 'translate',
         'eventLabel': text
       })
+
       this._resetTranslationTimer()
       this._initTranslationLoader()
+      // make sure repositioned elements are all translated
+      timerDoubleTrans = setTimeout(()=>this._repeatGoogleCall(lang), (400))
     }
   },
 
-  _initTranslationLoader: function() {
+  _repeatGoogleCall: function(lang) {
+    $('.google-translate select').val(lang)
+    this._triggerHtmlEvent($('.google-translate select'), 'change')
+    // assume trans complete
     clearTimeout(transTimeoutID)
+    $('#custom-loading-container').css('display','none')
+  },
+
+  _initTranslationLoader: function() {
     // only init load anim if expected google trans dom el.
     // if google changes gt dom render, degrades to no load anim.
     if ($('.goog-te-spinner-pos').length) {
